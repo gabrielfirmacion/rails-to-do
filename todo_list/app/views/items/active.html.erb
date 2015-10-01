@@ -1,4 +1,7 @@
 <% @active_items.each do |ai| %>
   <p><%= ai.title%></p>
+   <%= form_for ai, :url => item_path(ai.id) do |f| %>
+            <%= f.submit 'Complete'%>
+    <%end%>
 
 <%end%>
