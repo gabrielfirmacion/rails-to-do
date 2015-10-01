@@ -1,0 +1,12 @@
+<% @items.each do |item| %>
+  <ul>
+    <li><%= item.title %></li>
+        <%if !item.completed%>
+          <%= form_for item, :url => item_path(item.id) do |f| %>
+            <%= f.submit 'Complete'%>
+          <%end%>
+        <%end%>
+    </ul>
+ <% end %>
+
+
